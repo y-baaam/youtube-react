@@ -3,20 +3,38 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./reset.css";
 import App from "./App";
+
+import NotFound from "./components/page/notFound";
 import reportWebVitals from "./reportWebVitals";
 import DarkModeProvider from "./context/DarkModeContext";
-import { BrowserRouter } from "react-router-dom";
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import Videos from "./components/page/Videos";
+import VideoDetail from "./components/page/VideoDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <NotFound />,
+    children: [
+      { index: true, element: <Videos /> },
+      { path: "videos", element: <Videos /> },
+      { path: "videos/:keyword", element: <Videos /> },
+      { path: "videos/watch/:videoId", element: <VideoDetail /> },
+    ],
+  },
+]);
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <>
+    <React.StrictMode>
       <DarkModeProvider>
-        <App />
+        <RouterProvider router={router} />
       </DarkModeProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    </React.StrictMode>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
