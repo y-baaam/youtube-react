@@ -12,6 +12,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Videos from "./components/page/Videos";
 import VideoDetail from "./components/page/VideoDetail";
+import { YoutubeApiProvider } from "./context/YoutubeApiContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -24,15 +25,19 @@ const router = createBrowserRouter([
       { path: "videos", element: <Videos /> },
       { path: "videos/:keyword", element: <Videos /> },
       { path: "videos/watch/:videoId", element: <VideoDetail /> },
+      { path: "channel", element: "" },
     ],
   },
 ]);
+
 root.render(
   <>
     <React.StrictMode>
-      <DarkModeProvider>
-        <RouterProvider router={router} />
-      </DarkModeProvider>
+      <YoutubeApiProvider>
+        <DarkModeProvider>
+          <RouterProvider router={router} />
+        </DarkModeProvider>
+      </YoutubeApiProvider>
     </React.StrictMode>
   </>
 );
