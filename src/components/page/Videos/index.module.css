@@ -1,0 +1,15 @@
+.videoCardContainer {
+  display: flex;
+  flex-flow: row wrap;
+  padding-top: 80px;
+}
+
+.searchListItem {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 80px;
+}
