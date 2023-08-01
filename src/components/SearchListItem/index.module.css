@@ -1,0 +1,35 @@
+.searchItem {
+  display: flex;
+  flex-direction: row;
+  margin-top: 18px;
+  padding-bottom: 8px;
+}
+
+.searchItemThumbnailImg {
+  margin-right: 12px;
+  border-radius: 12px;
+}
+
+.searchItemDescription {
+  padding-right: 24px;
+}
+.searchItemChannelImg {
+}
+.searchItemTextContainer {
+}
+.searchItemTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  line-height: 1.2em;
+}
+.searchItemChannelTitle {
+  font-size: 14px;
+  padding-bottom: 4px;
+
+  color: var(--theme-secondary-color);
+}
+.searchItemPublishedAt {
+  font-size: 12px;
+  color: var(--theme-secondary-color);
+}

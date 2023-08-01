@@ -1,4 +1,51 @@
 .videoCard {
-  width: 350px;
-  height: 200px;
+  width: 320px;
+  height: 330px;
+  margin: 0 12px;
+}
+
+.videoCardThumbnailImg {
+  border-radius: 0.75rem;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.videoCardDescription {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.videoCardChannelImg {
+  width: 36px;
+  height: 36px;
+  border-radius: 100px;
+  background-color: rgb(13, 79, 137);
+  margin-right: 20px;
+}
+
+.videoCardTitle {
+  width: 230px;
+
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.2em;
+}
+
+.videoCardChannelTitle {
+  font-size: 14px;
+  padding-bottom: 4px;
+  color: var(--theme-secondary-color);
+}
+
+.videoCardPublishedAt {
+  font-size: 12px;
+  color: var(--theme-secondary-color);
 }
