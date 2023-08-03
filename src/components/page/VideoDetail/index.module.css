@@ -1,0 +1,40 @@
+.videoDetailPage {
+  width: 100%;
+  display: flex;
+  column-gap: 24px;
+}
+.videoContents {
+  width: 100%;
+  padding-left: 24px;
+}
+
+.video {
+}
+
+.videoTextContentsWrapper {
+}
+
+.videoTitle {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.videoDescription {
+  font-size: 14px;
+  color: var(--theme-text-color);
+}
+
+.comment {
+}
+
+@media (max-width: 1000px) {
+  .videoRelatedListRight {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .videoRelatedListBottom {
+    display: none;
+  }
+}

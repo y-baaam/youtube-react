@@ -3,9 +3,10 @@ import styles from "./index.module.css";
 import moment from "moment";
 // import "moment/locale/ko";
 import { useNavigate } from "react-router-dom";
+import ChannelInfo from "../ChannelInfo";
 
 export default function VideoCard({ video }) {
-  const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
+  const { title, thumbnails, channelTitle, publishedAt, id } = video.snippet;
 
   // 게시한 후 시간이 얼마나 지났는지 나타내기
   const publishDate = publishedAt.substring(0, 10);
@@ -25,16 +26,17 @@ export default function VideoCard({ video }) {
         alt=""
         width={thumbnails.medium.width}
         height={thumbnails.medium.height}
-        // onClick={onClickIntoVideoDetail}
+        onClick={onClickIntoVideoDetail}
       />
+      <ChannelInfo title={title} id={id} />
+
       <div className={styles.videoCardDescription}>
-        <div className={styles.videoCardChannelImg} alt={""} src={""} />
         <div
           className={styles.videoCardTextContainer}
-          // onClick={onClickIntoVideoDetail}
+          onClick={onClickIntoVideoDetail}
         >
-          <div className={styles.videoCardTitle}>{title}</div>
-          <div className={styles.videoCardChannelTitle}>{channelTitle}</div>
+          {/* <div className={styles.videoCardTitle}>{title}</div>
+          <div className={styles.videoCardChannelTitle}>{channelTitle}</div> */}
           <div className={styles.videoCardPublishedAt}> {publishDateDiff}</div>
         </div>
       </div>

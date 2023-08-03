@@ -1,6 +1,6 @@
 .videoCard {
   width: 320px;
-  height: 330px;
+  /* height: 280px; */
   margin: 0 12px;
 }
 
@@ -12,14 +12,14 @@
 
 .videoCardDescription {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   cursor: pointer;
 }
 .videoCardChannelImg {
   width: 36px;
   height: 36px;
   border-radius: 100px;
-  background-color: rgb(13, 79, 137);
+  /* background-color: rgb(13, 79, 137); */
   margin-right: 20px;
 }
 
