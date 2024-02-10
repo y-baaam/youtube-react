@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Update Jira issue
       uses: atlassian/gajira-login@v3
-      with:
-        username: ${{ secrets.JIRA_USERNAME }}
-        password: ${{ secrets.JIRA_TOKEN }}
-        url: ${{ secrets.JIRA_URL }}
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USERNAME }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
