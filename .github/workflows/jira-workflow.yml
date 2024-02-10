@@ -16,3 +16,11 @@ jobs:
         JIRA_BASE_URL: ${{ secrets.JIRA_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USERNAME }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
+
+    - name: Create Jira issue
+      uses: atlassian/gajira-create@v3
+      with:
+        project: "YR"
+        issuetype: "TASK"
+        summary: ${{ github.event.issue.title }} # GitHub 이슈의 제목을 사용
+        description: ${{ github.event.issue.html_url }} # GitHub 이슈의 URL을 사용
